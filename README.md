@@ -11,6 +11,20 @@ Documentation is coming soon.
 - [ ] Customization *(Priority: **Low**)*
 - [ ] Extensions *(Priority: **Low**)*
 
+## Status Updates
+> [!NOTE]
+> 3/2/2024
+> Hi! The good ol' project wheels are a-turning and this project is starting up. While it is not even close to done, the bare bones are in and work.
+> Over the next few weeks I will implementing different parts (Probably one or two new features a week or two). During this process, the API will be unstable, but usable.
+> The next steps to this API are:
+> - [ ] JSDoc Typings *(Once these are done, the documentation can be automatically generated)*
+> - [ ] Removal of debug loggings *(This'll only take a second)**
+> - [ ] Start/Stop Session
+>
+> By the way, to use this, you need two things:
+> - Your membean session ID (`https://membean.com/training_sessions/<this number>/user_state`)
+> - Your membean auth token (Stored in the `auth_token` cookie, but you can get it py pasting this into the URL bar: `javascript:alert(document.cookie.match(/auth_token=([a-zA-Z0-9_-]+);?/)[1])`)
+
 Do you have a suggestion? [Create an issue](https://github.com/redyetidev/membean/issues/new)
 
 While this code differs greatly from [Jurassic001's AutoBean](https://github.com/jurassic001/AutoBean), it was inspired by it.
