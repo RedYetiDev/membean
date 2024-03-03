@@ -188,7 +188,7 @@ class MemBean extends EventEmitter {
      * @returns {[string, Object]} - A tuple containing the name and JSON data of the navigator.
      */
     parseNavigator(el) {
-        let json = parseFormToJSON(el);
+        let json = this.parseFormToJSON(el);
         return [sanitizeString(el.attr('name')), json];
     }
 
@@ -205,7 +205,7 @@ class MemBean extends EventEmitter {
          * @returns {[string, Object]} - A tuple containing the name and JSON data of the navigator.
          */
         function parseNavCallback(_, el) {
-            return [parseNavigator($(el))];
+            return [this.parseNavigator($(el))];
         }
 
         let nav = $("#trainer-nav").children().map(parseNavCallback.bind(this)).get();
@@ -222,7 +222,7 @@ class MemBean extends EventEmitter {
     parseWordLearn($, type) {
         const object = {
             type,
-            nav: parseNavigation($),
+            nav: this.parseNavigation($),
         };
 
         let wordInfo = $("#misc-word-info").children().map((_, el) => $(el)).get();
@@ -280,7 +280,7 @@ class MemBean extends EventEmitter {
         };
 
         if (type === 'new_word') {
-            object.ikt = parseNavigator($("#word-flags > span > form"))[1];
+            object.ikt = this.parseNavigator($("#word-flags > span > form"))[1];
         }
 
         return object;
@@ -308,7 +308,7 @@ class MemBean extends EventEmitter {
     parseQuiz($) {
         const object = {
             type: "quiz",
-            nav: parseNavigation($),
+            nav: this.parseNavigation($),
         };
 
         object.clock = {};
@@ -324,8 +324,8 @@ class MemBean extends EventEmitter {
         // - Fill in the Blank
 
         object.answer = {};
-        object.answer.pass = parseNavigator($("form[name='Pass']"))[1];
-        object.answer.fail = parseNavigator($("form[name='Fail']"))[1];
+        object.answer.pass = this.parseNavigator($("form[name='Pass']"))[1];
+        object.answer.fail = this.parseNavigator($("form[name='Fail']"))[1];
 
         return object;
     }
@@ -338,12 +338,12 @@ class MemBean extends EventEmitter {
     async parseSpellCheck($) {
         const object = {
             type: "spelltest",
-            nav: parseNavigation($),
+            nav: this.parseNavigation($),
         };
 
         object.answer = {};
-        object.answer.pass = parseNavigator($("form[name='Pass']"))[1];
-        object.answer.fail = parseNavigator($("form[name='Fail']"))[1];
+        object.answer.pass = this.parseNavigator($("form[name='Pass']"))[1];
+        object.answer.fail = this.parseNavigator($("form[name='Fail']"))[1];
 
         return object;
     }
@@ -354,7 +354,7 @@ class MemBean extends EventEmitter {
      * @returns {Promise<Object>} - A promise resolving to the parsed take a break data.
      */
     async parseTakeABreak($) {
-        let { barrier } = parseFormToJSON($("form"));
+        let { barrier } = this.parseFormToJSON($("form"));
         await this._int_advance(id, 'close!', barrier);
         return { type: "done" };
     }
