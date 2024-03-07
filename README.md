@@ -6,6 +6,12 @@ Documentation is coming soon.
 
 ## Todo List
 - [x] Core *(Priority: **High**)*
+  - [ ] API Typings
+  - [x] Answer Questions Correctly / Incorrectly
+  - [x] Learn new words
+    - [x] 'I Know This'
+    - [x] Spelltest
+  - [x] Restudy
 - [ ] Documentation *(Priority: **High**)*
 - [ ] Test Module *(Priority: **Low**)*
 - [ ] Customization *(Priority: **Low**)*
@@ -13,17 +19,20 @@ Documentation is coming soon.
 
 ## Status Updates
 > [!NOTE]
-> 3/2/2024
-> Hi! The good ol' project wheels are a-turning and this project is starting up. While it is not even close to done, the bare bones are in and work.
+> *Latest Update: 3/6/2024*
+> 
+> Hi! The good ol' project wheels are a-turning and this project is starting up. While it is not even close to done, the bare bones are in.
 > Over the next few weeks I will implementing different parts (Probably one or two new features a week or two). During this process, the API will be unstable, but usable.
 > The next steps to this API are:
 > - [ ] JSDoc Typings *(Once these are done, the documentation can be automatically generated)*
 > - [ ] Removal of debug loggings *(This'll only take a second)**
-> - [ ] Start/Stop Session
+> - [ ] new class `MembeanSession(id: number)` *(Hoping to get out this week)*
+>    - [ ] Start Session
+>    - [x] Stop Session
 >
 > By the way, to use this, you need two things:
-> - Your membean session ID (`https://membean.com/training_sessions/<this number>/user_state`)
-> - Your membean auth token (Stored in the `auth_token` cookie, but you can get it py pasting this into the URL bar: `javascript:alert(document.cookie.match(/auth_token=([a-zA-Z0-9_-]+);?/)[1])`)
+> - Your Membean session ID (`https://membean.com/training_sessions/<this number>/user_state`)
+> - Your Membean auth token (Stored in the `auth_token` cookie, but you can get it by pasting this into the URL bar: `javascript:alert(document.cookie.match(/auth_token=([a-zA-Z0-9_-]+);?/)[1])`)
 
 Do you have a suggestion? [Create an issue](https://github.com/redyetidev/membean/issues/new)
 
