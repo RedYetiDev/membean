@@ -11,7 +11,7 @@
   "name": "membean",
   "version": "1.0.1",
   "description": "A NodeJS Client for Membean",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {},
   "repository": {
     "type": "git",
