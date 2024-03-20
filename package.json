@@ -9,12 +9,10 @@
     "@types/got": "^9.6.12"
   },
   "name": "membean",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A NodeJS Client for Membean",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redyetidev/membean.git"
